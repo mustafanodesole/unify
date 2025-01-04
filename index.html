@@ -25,15 +25,33 @@
 
 
   <style>
-    .submenu:hover .nested-menu , .nested-menu:hover{
-        display: block;
+    /* Nested Dropdown Styling */
+    .dropdown-submenu {
+      position: relative;
     }
 
-    .nested-menu{
+    .dropdown-submenu .dropdown-menu {
+      top: 0;
+      left: 100%;
+      /* Submenu appears to the right */
       display: none;
     }
 
-  
+    .dropdown-submenu:hover>.dropdown-menu {
+      display: block;
+    }
+
+
+    /*  */
+
+    .hover-bg {
+      background-color: transparent;
+    }
+
+    .hover-bg:hover {
+      background-color: #09a247;
+      color: white;
+    }
   </style>
 </head>
 
@@ -47,8 +65,12 @@
     <div class="container">
       <nav class="js-mega-menu navbar-nav-wrap">
         <!-- Default Logo -->
-        <a class="navbar-brand" href="./index.html" aria-label="Unify">
+        <!-- <a class="navbar-brand" href="./index.html" aria-label="Unify">
           <img class="navbar-brand-logo" src="./assets/svg/logos/logo.svg" alt="Image Description">
+        </a> -->
+        <a class="logo pull-left" href="/">
+          <img src="assets_old/img/logo1-default.png"
+            style="margin-top: 10px;margin-bottom: 10px;width: 120px;height: 40px;">
         </a>
         <!-- End Default Logo -->
 
@@ -69,6 +91,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <div class="navbar-absolute-top-scroller">
             <ul class="navbar-nav nav-pills">
+
               <!-- Overview -->
               <li class="hs-has-mega-menu nav-item dropdown" data-hs-mega-menu-item-options='{
                     "desktop": {
@@ -86,47 +109,39 @@
                     <div class="col-sm">
                       <div class="navbar-dropdown-menu-inner">
                         <!-- <span class="dropdown-header">Classic</span> -->
-                        <a class="dropdown-item active" href="./how-it-works.html"> How
+                        <a class="dropdown-item " href="./how-it-works.html"> How
                           It Works</a>
 
-                        <!-- ------ -->
-                        <div data-bs-toggle="dropdown" class="" class="hs-has-mega-menu nav-item " data-hs-mega-menu-item-options='{
-                                      "desktop": {
-                                        "maxWidth": "40rem"
-                                      }
-                                    }'>
-                          <a id="feature-highlights" class=" nav-link  submenu"
-                            aria-current="feature-highlights" href="#" role="button" aria-expanded="false">Feature
-                            Highlights</a>
-                          <div class=" nested-menu" aria-labelledby="feature-highlights"
-                            style="min-width: 20rem;">
-                            <!-- Main Content -->
-                            <div class="row">
-
-                              <div class="col-sm">
-                                <div class="navbar-dropdown-menu-inner">
-                                  <!-- <span class="dropdown-header">Classic</span> -->
-                                  <a class="dropdown-item active" href="./how-it-works.html"> How
-                                    It Works</a>
+                        <!-- Feature Highlights with nested dropdown -->
+                        <ul class="nav-item dropdown ps-0">
+                          <!-- <a class="dropdown-item dropdown-toggle hs-mega-menu-invoker nav-link" href="#" id="featureHighlights"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Feature Highlights</a> -->
 
 
-                                  <div class="dropdown-item">
-                                    Soemthing
 
-                                  </div>
-
-                                  <a class="dropdown-item " href="./costumers.html">
-                                    Costumers </a>
-                                  <a class="dropdown-item " href="./users-testimonials.html"> Users Testimonials</a>
+                          <div class="dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle" href="#">Feature Highlights</a>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="#">Ease of Use</a>
+                              <a class="dropdown-item" href="#">Performance Analytics</a>
+                              <a class="dropdown-item" href="#">Script Correlation</a>
+                              <a class="dropdown-item" href="#">My Product</a>
+                              <a class="dropdown-item" href="#">Cool Things</a>
+                              <!-- Sub-Nested Dropdown -->
+                              <!-- <div class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Advanced Features</a>
+                                <div class="dropdown-menu">
+                                  <a class="dropdown-item" href="./advanced-feature1.html">Advanced Feature 1</a>
+                                  <a class="dropdown-item" href="./advanced-feature2.html">Advanced Feature 2</a>
                                 </div>
-                              </div>
+                              </div> -->
                             </div>
-                            <!-- End Main Content -->
                           </div>
 
-                        </div>
 
-                        <!-- ------- -->
+                        </ul>
+
+
 
                         <a class="dropdown-item " href="./costumers.html">
                           Costumers </a>
@@ -138,6 +153,9 @@
                 </div>
                 <!-- End Mega Menu -->
               </li>
+
+
+
               <!-- End Overview -->
 
               <!-- Product -->
@@ -793,7 +811,7 @@
 
           <div class="link link-light link-light-75 text-center  pb-3">It's free, it's easy to start. Get insight into
             your web scalability and users' performance experience.</div>
-          <button class="btn btn-outline-light">Download My Softare Registration-Free</button>
+          <button class="btn btn-outline-light hover-bg">Download My Softare Registration-Free</button>
 
         </div>
       </div>
